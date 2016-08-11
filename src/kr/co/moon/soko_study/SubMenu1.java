@@ -2,7 +2,6 @@ package kr.co.moon.soko_study;
 
 import java.util.ArrayList;
 
-import android.R.integer;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,7 +25,7 @@ public class SubMenu1 extends Activity implements OnClickListener {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.submenu1);
+		setContentView(R.layout.select);
 		mId = new ArrayList<Integer>();
 		ImageButton imageButton1 = (ImageButton) findViewById(R.id.imageButton1);
 		imageButton1.setOnClickListener(this);

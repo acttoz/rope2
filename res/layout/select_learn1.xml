@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+
+        android:layout_height="0px"
+        android:layout_weight="165"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:id="@+id/btn1"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="183"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/select_learn1_01" />
+
+        <ImageView
+            android:id="@+id/btn2"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="150"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/select_learn1_02" />
+
+        <ImageView
+            android:id="@+id/btn3"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="150"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/select_learn1_03" />
+
+        <ImageView
+            android:id="@+id/btn4"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="150"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/select_learn1_04" />
+
+        <ImageView
+            android:id="@+id/btn5"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="150"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/select_learn1_05" />
+
+        <ImageView
+            android:id="@+id/btn6"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="175"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/select_learn1_06" />
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+
+        android:layout_height="0px"
+        android:layout_weight="101"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:id="@+id/btn11"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="183"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/select_learn1_07" />
+
+        <ImageView
+            android:id="@+id/btn12"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="150"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/select_learn1_08" />
+
+        <ImageView
+            android:id="@+id/btn13"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="150"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/select_learn1_09" />
+
+        <ImageView
+            android:id="@+id/btn14"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="150"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/select_learn1_10" />
+
+        <ImageView
+            android:id="@+id/btn15"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="150"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/select_learn1_11" />
+
+        <ImageView
+            android:id="@+id/btn16"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="175"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/select_learn1_12" />
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+
+        android:layout_height="0px"
+        android:layout_weight="107"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:id="@+id/btn21"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="183"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/select_learn1_13" />
+
+        <ImageView
+            android:id="@+id/btn22"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="150"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/select_learn1_14" />
+
+        <ImageView
+            android:id="@+id/btn23"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="150"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/select_learn1_15" />
+
+        <ImageView
+            android:id="@+id/btn24"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="150"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/select_learn1_16" />
+
+        <ImageView
+            android:id="@+id/btn25"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="150"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/select_learn1_17" />
+
+        <ImageView
+            android:id="@+id/btn26"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="175"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/select_learn1_18" />
+
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+
+        android:layout_height="0px"
+        android:layout_weight="121"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:id="@+id/btn31"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="183"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/select_learn1_19" />
+
+        <ImageView
+            android:id="@+id/btn32"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="150"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/select_learn1_20" />
+
+        <ImageView
+            android:id="@+id/btn33"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="150"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/select_learn1_21" />
+
+        <ImageView
+            android:id="@+id/btn34"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="150"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/select_learn1_22" />
+
+        <ImageView
+            android:id="@+id/btn35"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="150"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/select_learn1_23" />
+
+        <ImageView
+            android:id="@+id/btn36"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="175"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/select_learn1_24" />
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
