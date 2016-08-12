@@ -71,12 +71,12 @@ public class M2 extends Activity implements SurfaceHolder.Callback,
 	public void surfaceCreated(SurfaceHolder holder) {
 		// TODO Auto-generated method stub
 		mHolder = holder;
-		playClip(SubMenu1.mId.get(current));
+		playClip(Select.mId.get(current));
 
 	}
 
 	public void playClip(int num) {
-		currentText.setText(num + "¹ø µ¿ÀÛ");
+		currentText.setText(num + "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 		String tmpSign = "m" + num;
 		lid = this.getResources().getIdentifier(tmpSign, "raw",
 				this.getPackageName());
@@ -107,7 +107,7 @@ public class M2 extends Activity implements SurfaceHolder.Callback,
 
 		public void onCompletion(MediaPlayer mp) {
 			// TODO Auto-generated method stub
-			playClip(SubMenu1.mId.get(current++));
+			playClip(Select.mId.get(current++));
 		}
 	};
 
@@ -141,11 +141,11 @@ public class M2 extends Activity implements SurfaceHolder.Callback,
 
 		case R.id.previous:
 			if (current > 0)
-				playClip(SubMenu1.mId.get(--current));
+				playClip(Select.mId.get(--current));
 			break;
 		case R.id.next:
-			if (current < SubMenu1.mId.size())
-				playClip(SubMenu1.mId.get(++current));
+			if (current < Select.mId.size())
+				playClip(Select.mId.get(++current));
 			break;
 		}
 		

@@ -3,22 +3,28 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#e8c8a1"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
-    <include
-        android:id="@+id/header"
+    <!--<LinearLayout-->
+        <!--android:id="@+id/head_container"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="0px"-->
+        <!--android:layout_weight="3"-->
+        <!--android:orientation="vertical">-->
+        <!--&lt;!&ndash;titlebar here&ndash;&gt;-->
+    <!--</LinearLayout>-->
+
+    <ViewStub
+        android:id="@+id/header_container"
         android:layout_width="match_parent"
         android:layout_height="0px"
-        android:layout_weight="4"
-        layout="@layout/head1"
-        />
-    <include
-        android:id="@+id/select"
+        android:layout_weight="3" />
+
+    <ViewStub
+        android:id="@+id/select_container"
         android:layout_width="match_parent"
         android:layout_height="0px"
-        android:layout_weight="14"
-        layout="@layout/select_learn1"
-        />
 
+        android:layout_weight="14" />
 
 </LinearLayout>

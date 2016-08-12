@@ -6,12 +6,17 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.view.ViewStub;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Select extends Activity implements OnClickListener {
 
@@ -21,149 +26,200 @@ public class Select extends Activity implements OnClickListener {
     String tempText;
     Button back;
     Button movie;
+    ImageView menuBtn1, menuBtn2, menuBtn3, menuBtn4;
+    ImageView menuBtns[] = {menuBtn1, menuBtn2, menuBtn3, menuBtn4};
+    int[] menuBtnId={R.id.menu_btn1, R.id.menu_btn2, R.id.menu_btn3, R.id.menu_btn4};;
+    ImageView selectBtn1,
+            selectBtn2,
+            selectBtn3,
+            selectBtn4,
+            selectBtn5,
+            selectBtn6,
+            selectBtn7,
+            selectBtn8,
+            selectBtn9,
+            selectBtn10,
+            selectBtn11,
+            selectBtn12,
+            selectBtn13,
+            selectBtn14,
+            selectBtn15,
+            selectBtn16,
+            selectBtn17,
+            selectBtn18,
+            selectBtn19,
+            selectBtn20,
+            selectBtn21,
+            selectBtn22,
+            selectBtn23,
+            selectBtn24;
+    ImageView selectBtns[] = {selectBtn1,
+            selectBtn2,
+            selectBtn3,
+            selectBtn4,
+            selectBtn5,
+            selectBtn6,
+            selectBtn7,
+            selectBtn8,
+            selectBtn9,
+            selectBtn10,
+            selectBtn11,
+            selectBtn12,
+            selectBtn13,
+            selectBtn14,
+            selectBtn15,
+            selectBtn16,
+            selectBtn17,
+            selectBtn18,
+            selectBtn19,
+            selectBtn20,
+            selectBtn21,
+            selectBtn22,
+            selectBtn23,
+            selectBtn24};
+    int[] selectBtnId = {R.id.btn1
+            , R.id.btn2
+            , R.id.btn3
+            , R.id.btn4
+            , R.id.btn5
+            , R.id.btn6
+            , R.id.btn7
+            , R.id.btn8
+            , R.id.btn9
+            , R.id.btn10
+            , R.id.btn11
+            , R.id.btn12
+            , R.id.btn13
+            , R.id.btn14
+            , R.id.btn15
+            , R.id.btn16
+            , R.id.btn17
+            , R.id.btn18
+            , R.id.btn19
+            , R.id.btn20
+            , R.id.btn21
+            , R.id.btn22
+            , R.id.btn23
+            , R.id.btn24
+    };
+    int flag1;
+    int flag2;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.select);
-        mId = new ArrayList<Integer>();
-        ImageButton imageButton1 = (ImageButton) findViewById(R.id.imageButton1);
-        imageButton1.setOnClickListener(this);
-        ImageButton imageButton2 = (ImageButton) findViewById(R.id.imageButton2);
-        imageButton2.setOnClickListener(this);
-        ImageButton imageButton3 = (ImageButton) findViewById(R.id.imageButton3);
-        imageButton3.setOnClickListener(this);
-        ImageButton imageButton4 = (ImageButton) findViewById(R.id.imageButton4);
-        imageButton4.setOnClickListener(this);
-        ImageButton imageButton5 = (ImageButton) findViewById(R.id.imageButton5);
-        imageButton5.setOnClickListener(this);
-        ImageButton imageButton6 = (ImageButton) findViewById(R.id.imageButton6);
-        imageButton6.setOnClickListener(this);
-        ImageButton imageButton7 = (ImageButton) findViewById(R.id.imageButton7);
-        imageButton7.setOnClickListener(this);
-        ImageButton imageButton8 = (ImageButton) findViewById(R.id.imageButton8);
-        imageButton8.setOnClickListener(this);
-        ImageButton imageButton9 = (ImageButton) findViewById(R.id.imageButton9);
-        imageButton9.setOnClickListener(this);
-        ImageButton imageButton10 = (ImageButton) findViewById(R.id.imageButton10);
-        imageButton10.setOnClickListener(this);
-        ImageButton imageButton11 = (ImageButton) findViewById(R.id.imageButton11);
-        imageButton11.setOnClickListener(this);
-        ImageButton imageButton12 = (ImageButton) findViewById(R.id.imageButton12);
-        imageButton12.setOnClickListener(this);
-        ImageButton imageButton13 = (ImageButton) findViewById(R.id.imageButton13);
-        imageButton13.setOnClickListener(this);
-        ImageButton imageButton14 = (ImageButton) findViewById(R.id.imageButton14);
-        imageButton14.setOnClickListener(this);
-        ImageButton imageButton15 = (ImageButton) findViewById(R.id.imageButton15);
-        imageButton15.setOnClickListener(this);
-        ImageButton imageButton16 = (ImageButton) findViewById(R.id.imageButton16);
-        imageButton16.setOnClickListener(this);
-        ImageButton imageButton17 = (ImageButton) findViewById(R.id.imageButton17);
-        imageButton17.setOnClickListener(this);
-        ImageButton imageButton18 = (ImageButton) findViewById(R.id.imageButton18);
-        imageButton18.setOnClickListener(this);
+        flag1 = 2;
+        flag2 = 1;
 
-        back = (Button) findViewById(R.id.btn_back);
-        movie = (Button) findViewById(R.id.btn_movie);
-        back.setOnClickListener(this);
-        movie.setOnClickListener(this);
-        playlist = (TextView) findViewById(R.id.playlist);
+        // header viewstub
+        ViewStub headStub = (ViewStub) findViewById(R.id.header_container);
+        String headID = "head" + flag1;
+        int resID = getResources().getIdentifier(headID, "layout", getPackageName());
+        headStub.setLayoutResource(resID);
+        View inflated = headStub.inflate();
+        for (int i = 0; i < 4; i++) {
+            menuBtns[i] = (ImageView) findViewById(menuBtnId[i]);
+            menuBtns[i].setOnClickListener(this);
+        }
+
+        // select viewstub
+        ViewStub selectStub = (ViewStub) findViewById(R.id.select_container);
+        String selectID = "select" + flag2;
+        int resID2 = getResources().getIdentifier(selectID, "layout", getPackageName());
+        selectStub.setLayoutResource(resID2);
+        View inflated2 = selectStub.inflate();
+
+        switch (flag2) {
+            case 1:
+                for (int i = 0; i < 24; i++) {
+                    selectBtns[i] = (ImageView) findViewById(selectBtnId[i]);
+                    final int finalI = i+1;
+                    selectBtns[i].setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View v) {
+                            Toast.makeText(getApplicationContext(), "1"+ finalI, Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+                break;
+            case 2:
+                for (int i = 0; i < 9; i++) {
+                    selectBtns[i] = (ImageView) findViewById(selectBtnId[i]);
+                    selectBtns[i].setOnClickListener(this);
+                }
+                break;
+            case 3:
+                for (int i = 0; i < 9; i++) {
+                    selectBtns[i] = (ImageView) findViewById(selectBtnId[i]);
+                    selectBtns[i].setOnClickListener(this);
+                }
+                break;
+            case 4:
+                for (int i = 0; i < 24; i++) {
+                    selectBtns[i] = (ImageView) findViewById(selectBtnId[i]);
+                    selectBtns[i].setOnClickListener(this);
+                }
+                break;
+            case 5:
+                for (int i = 0; i < 9; i++) {
+                    selectBtns[i] = (ImageView) findViewById(selectBtnId[i]);
+                    selectBtns[i].setOnClickListener(this);
+                }
+                break;
+        }
+
 
         intent = new Intent(this, M1.class);
         intent.putExtra("BOOL", 2);
+    }
 
+    private void initHead() {
     }
 
     public void onClick(View v) {
         // TODO Auto-generated method stub
 
         switch (v.getId()) {
-            case R.id.imageButton1:
-                mId.add(1);
+            case R.id.menu_btn1:
+                Toast.makeText(getApplicationContext(), "1", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.imageButton2:
-                mId.add(2);
-                break;
-            case R.id.imageButton3:
-                mId.add(3);
-                break;
-            case R.id.imageButton4:
-                mId.add(4);
-                break;
-            case R.id.imageButton5:
-                mId.add(5);
-                break;
-            case R.id.imageButton6:
-                mId.add(6);
-                break;
-            case R.id.imageButton7:
-                mId.add(7);
-                break;
-            case R.id.imageButton8:
-                mId.add(8);
-                break;
-            case R.id.imageButton9:
-                mId.add(9);
-                break;
-            case R.id.imageButton10:
-                mId.add(10);
-                break;
-            case R.id.imageButton11:
-                mId.add(11);
-                break;
-            case R.id.imageButton12:
-                mId.add(12);
-                break;
-            case R.id.imageButton13:
-                mId.add(13);
-                break;
-            case R.id.imageButton14:
-                mId.add(14);
-                break;
-            case R.id.imageButton15:
-                mId.add(15);
-                break;
-            case R.id.imageButton16:
-                mId.add(16);
-                break;
-            case R.id.imageButton17:
-                mId.add(17);
-                break;
-            case R.id.imageButton18:
-                mId.add(18);
-                break;
-
-            case R.id.btn_back:
-                mId.remove(mId.size() - 1);
-                break;
-            case R.id.btn_movie:
-                startActivity(new Intent(this, M2.class));
-                break;
+//            case R.id.imageButton17:
+//                mId.add(17);
+//                break;
+//            case R.id.imageButton18:
+//                mId.add(18);
+//                break;
+//
+//            case R.id.btn_back:
+//                mId.remove(mId.size() - 1);
+//                break;
+//            case R.id.btn_movie:
+//                startActivity(new Intent(this, M2.class));
+//                break;
         }
-        tempText = "";
-        for (int i = 0; i < mId.size(); i++) {
-            if (i == 0)
-                tempText += String.valueOf(mId.get(i));
-            else
-                tempText += String.valueOf("->" + mId.get(i));
-        }
-        playlist.setText(tempText);
+//        tempText = "";
+//        for (int i = 0; i < mId.size(); i++) {
+//            if (i == 0)
+//                tempText += String.valueOf(mId.get(i));
+//            else
+//                tempText += String.valueOf("->" + mId.get(i));
+//        }
+//        playlist.setText(tempText);
     }
 
     @Override
     protected void onResume() {
         // TODO Auto-generated method stub
         super.onResume();
-        mId.clear();
+//        mId.clear();
         tempText = "";
-        for (int i = 0; i < mId.size(); i++) {
-            if (i == 0)
-                tempText += String.valueOf(mId.get(i));
-            else
-                tempText += String.valueOf("->" + mId.get(i));
-        }
-        playlist.setText(tempText);
+//        for (int i = 0; i < mId.size(); i++) {
+//            if (i == 0)
+//                tempText += String.valueOf(mId.get(i));
+//            else
+//                tempText += String.valueOf("->" + mId.get(i));
+//        }
+//        playlist.setText(tempText);
     }
 
     @Override
