@@ -109,8 +109,9 @@ public class Select extends Activity implements OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.select);
-        flag1 = 2;
-        flag2 = 1;
+        Intent intent = getIntent(); // 값을 받아온다.
+        flag1 = intent.getIntExtra("FLAG1",1);
+        flag2 = intent.getIntExtra("FLAG2",1);
 
         // header viewstub
         ViewStub headStub = (ViewStub) findViewById(R.id.header_container);

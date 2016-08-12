@@ -27,23 +27,32 @@ public class MainActivity extends Activity implements OnClickListener {
 	}
 
 	public void onClick(View v) {
+		Intent intent;
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		case R.id.btn0:
-			startActivity(new Intent(this, Menu1.class));
+			intent = new Intent(this, Select.class);
+			intent.putExtra("FLAG1", 1);
+			intent.putExtra("FLAG2", 0);
+			startActivity(intent);
 			break;
 		case R.id.btn1:
-			startActivity(new Intent(this, Menu2.class));
+			intent = new Intent(this, Select.class);
+			intent.putExtra("FLAG1", 2);
+			intent.putExtra("FLAG2", 1);
+			startActivity(intent);
 			break;
 		case R.id.btn2:
-			startActivity(new Intent(this, Select.class));
+			intent = new Intent(this, Select.class);
+			intent.putExtra("FLAG1", 3);
+			intent.putExtra("FLAG2", 1);
+			startActivity(intent);
 			break;
 		case R.id.btn3:
-			Intent intent = new Intent(this, M1.class);
-			intent.putExtra("BTNID", 33);
-			intent.putExtra("BOOL", 2);
+			intent = new Intent(this, Select.class);
+			intent.putExtra("FLAG1", 4);
+			intent.putExtra("FLAG2", 1);
 			startActivity(intent);
-
 			break;
 		}
 	}
