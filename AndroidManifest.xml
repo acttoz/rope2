@@ -36,7 +36,9 @@
         <activity
             android:name=".Select"
             android:screenOrientation="landscape" />
-        <activity android:name=".Content" />
+        <activity
+            android:name=".Content"
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>

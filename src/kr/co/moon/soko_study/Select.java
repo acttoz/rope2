@@ -26,6 +26,8 @@ public class Select extends Activity implements OnClickListener {
     String tempText;
     Button back;
     Button movie;
+
+
     ImageView menuBtn1, menuBtn2, menuBtn3, menuBtn4;
     ImageView menuBtns[] = {menuBtn1, menuBtn2, menuBtn3, menuBtn4};
     int[] menuBtnId={R.id.menu_btn1, R.id.menu_btn2, R.id.menu_btn3, R.id.menu_btn4};;
@@ -115,7 +117,7 @@ public class Select extends Activity implements OnClickListener {
 
         // header viewstub
         ViewStub headStub = (ViewStub) findViewById(R.id.header_container);
-        String headID = "head" + flag1;
+        String headID = "head_" + flag1;
         int resID = getResources().getIdentifier(headID, "layout", getPackageName());
         headStub.setLayoutResource(resID);
         View inflated = headStub.inflate();
@@ -126,7 +128,7 @@ public class Select extends Activity implements OnClickListener {
 
         // select viewstub
         ViewStub selectStub = (ViewStub) findViewById(R.id.select_container);
-        String selectID = "select" + flag2;
+        String selectID = "select_" + flag2;
         int resID2 = getResources().getIdentifier(selectID, "layout", getPackageName());
         selectStub.setLayoutResource(resID2);
         View inflated2 = selectStub.inflate();
@@ -138,7 +140,11 @@ public class Select extends Activity implements OnClickListener {
                     final int finalI = i+1;
                     selectBtns[i].setOnClickListener(new View.OnClickListener() {
                         public void onClick(View v) {
-                            Toast.makeText(getApplicationContext(), "1"+ finalI, Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(Select.this, Content.class);
+                            intent.putExtra("FLAG1", "_2");
+                            intent.putExtra("FLAG2", "_1");
+                            intent.putExtra("FLAG3", "_"+finalI);
+                            startActivity(intent);
                         }
                     });
                 }
