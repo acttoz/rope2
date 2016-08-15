@@ -1,6 +1,7 @@
 package kr.co.moon.soko_study;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.MotionEvent;
@@ -27,8 +28,11 @@ public class OnSwipeTouchListener implements OnTouchListener {
 
         @Override
         public boolean onDown(MotionEvent e) {
+            OnDown();
             return true;
         }
+
+
 
         @Override
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
@@ -44,6 +48,7 @@ public class OnSwipeTouchListener implements OnTouchListener {
                             onSwipeLeft();
                         }
                     }
+
                     result = true;
                 }
                 else if (Math.abs(diffY) > SWIPE_THRESHOLD && Math.abs(velocityY) > SWIPE_VELOCITY_THRESHOLD) {
@@ -73,5 +78,8 @@ public class OnSwipeTouchListener implements OnTouchListener {
 
     public void onSwipeBottom() {
     }
+    public void OnDown() {
+    }
+
 }
 

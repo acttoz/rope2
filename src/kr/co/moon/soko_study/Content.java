@@ -76,7 +76,7 @@ public class Content extends Activity implements OnClickListener {
             int contentResIdList = getResources().getIdentifier(tempStr + (i + 1), "drawable", getPackageName());
             contentImageIdList.add(contentResIdList);
         }
-        nowIndex = flag3-1;
+        nowIndex = flag3 - 1;
 
 
         // header viewstub
@@ -109,24 +109,29 @@ public class Content extends Activity implements OnClickListener {
             }
 
             public void onSwipeRight() {
-                if(nowIndex!=0)
-                content.setImageResource(contentImageIdList.get(--nowIndex));
-                Log.d("ss","now inderx"+nowIndex);
+                if (nowIndex != 0)
+                    content.setImageResource(contentImageIdList.get(--nowIndex));
+                Log.d("ss", "now index" + nowIndex);
             }
 
             public void onSwipeLeft() {
-                if(nowIndex!=contentNum-1)
-                content.setImageResource(contentImageIdList.get(++nowIndex));
-                Log.d("ss","now inderx"+nowIndex);
+                if (nowIndex != contentNum - 1)
+                    content.setImageResource(contentImageIdList.get(++nowIndex));
+                Log.d("ss", "now index" + nowIndex);
             }
 
             public void onSwipeBottom() {
             }
 
+            public void OnDown() {
+                Intent intent = new Intent(Content.this, M1.class);
+                intent.putExtra("PLAY", 1);
+                startActivity(intent);
+                Log.d("ss","down");
+            }
         });
 
-        intent = new Intent(this, M1.class);
-        intent.putExtra("BOOL", 2);
+
     }
 
     private void initHead() {

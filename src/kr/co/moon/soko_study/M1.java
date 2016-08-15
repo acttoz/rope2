@@ -35,33 +35,11 @@ public class M1 extends Activity implements SurfaceHolder.Callback,
 		setContentView(R.layout.m1);
 
 		Intent intent = getIntent();
-		btnId = intent.getIntExtra("BTNID", 0);
-		bool = intent.getIntExtra("BOOL", 0);
+		btnId = intent.getIntExtra("PLAY", 0);
 
 		TextView text = (TextView) findViewById(R.id.textView1);
 
-		if (bool == 1) {
-			if (btnId == 1)
-				text.setText(1 + "번 동작");
-			if (btnId == 2)
-				text.setText(2 + "번 동작");
-			if (btnId == 3)
-				text.setText(3 + "번 동작");
-			if (btnId == 4)
-				text.setText(4 + "번 동작");
-			if (btnId == 5)
-				text.setText(5 + "번 동작");
-			if (btnId == 6)
-				text.setText(6 + "번 동작");
 
-		} else if (bool == 2) {
-			if (btnId == 33) {
-				text.setText("전체 동작");
-			} else {
-				text.setText(btnId + "번 동작");
-			}
-
-		}
 
 		mPreview = (SurfaceView) findViewById(R.id.surface);
 		mHolder = mPreview.getHolder();
@@ -101,7 +79,7 @@ public class M1 extends Activity implements SurfaceHolder.Callback,
 		}
 		// mPlayer.setDataSource(getResources(R.raw.m1));
 		mPlayer.setDisplay(mHolder);
-		mPlayer.setLooping(false);
+		mPlayer.setLooping(true);
 		try {
 			mPlayer.prepare();
 		} catch (IllegalStateException e) {
@@ -120,7 +98,6 @@ public class M1 extends Activity implements SurfaceHolder.Callback,
 
 		public void onCompletion(MediaPlayer mp) {
 			// TODO Auto-generated method stub
-			playClip(8);
 		}
 	};
 
