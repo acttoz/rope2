@@ -35,10 +35,12 @@
             android:screenOrientation="landscape"></activity>
         <activity
             android:name=".Select"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:theme="@style/noAnimTheme"/>
         <activity
             android:name=".Content"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:theme="@style/noAnimTheme"/>
     </application>
 
 </manifest>

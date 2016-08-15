@@ -30,7 +30,8 @@ public class Select extends Activity implements OnClickListener {
 
     ImageView menuBtn1, menuBtn2, menuBtn3, menuBtn4;
     ImageView menuBtns[] = {menuBtn1, menuBtn2, menuBtn3, menuBtn4};
-    int[] menuBtnId={R.id.menu_btn1, R.id.menu_btn2, R.id.menu_btn3, R.id.menu_btn4};;
+    int[] menuBtnId = {R.id.menu_btn1, R.id.menu_btn2, R.id.menu_btn3, R.id.menu_btn4};
+    ;
     ImageView selectBtn1,
             selectBtn2,
             selectBtn3,
@@ -112,8 +113,8 @@ public class Select extends Activity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.select);
         Intent intent = getIntent(); // 값을 받아온다.
-        flag1 = intent.getIntExtra("FLAG1",1);
-        flag2 = intent.getIntExtra("FLAG2",1);
+        flag1 = intent.getIntExtra("FLAG1", 1);
+        flag2 = intent.getIntExtra("FLAG2", 1);
 
         // header viewstub
         ViewStub headStub = (ViewStub) findViewById(R.id.header_container);
@@ -137,14 +138,15 @@ public class Select extends Activity implements OnClickListener {
             case 1:
                 for (int i = 0; i < 24; i++) {
                     selectBtns[i] = (ImageView) findViewById(selectBtnId[i]);
-                    final int finalI = i+1;
+                    final int finalI = i + 1;
                     selectBtns[i].setOnClickListener(new View.OnClickListener() {
                         public void onClick(View v) {
                             Intent intent = new Intent(Select.this, Content.class);
-                            intent.putExtra("FLAG1", "_2");
-                            intent.putExtra("FLAG2", "_1");
-                            intent.putExtra("FLAG3", "_"+finalI);
+                            intent.putExtra("FLAG1", 2);
+                            intent.putExtra("FLAG2", 1);
+                            intent.putExtra("FLAG3", finalI);
                             startActivity(intent);
+                            finish();
                         }
                     });
                 }
@@ -152,25 +154,60 @@ public class Select extends Activity implements OnClickListener {
             case 2:
                 for (int i = 0; i < 9; i++) {
                     selectBtns[i] = (ImageView) findViewById(selectBtnId[i]);
-                    selectBtns[i].setOnClickListener(this);
+                    final int finalI = i + 1;
+                    selectBtns[i].setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View v) {
+                            Intent intent = new Intent(Select.this, Content.class);
+                            intent.putExtra("FLAG1", 2);
+                            intent.putExtra("FLAG2", 2);
+                            intent.putExtra("FLAG3", finalI);
+                            startActivity(intent);
+                            finish();
+                        }
+                    });
                 }
                 break;
             case 3:
                 for (int i = 0; i < 9; i++) {
                     selectBtns[i] = (ImageView) findViewById(selectBtnId[i]);
-                    selectBtns[i].setOnClickListener(this);
+                    final int finalI = i + 1;
+                    selectBtns[i].setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View v) {
+                            Intent intent = new Intent(Select.this, Content.class);
+                            intent.putExtra("FLAG1", 2);
+                            intent.putExtra("FLAG2", 3);
+                            intent.putExtra("FLAG3", finalI);
+                            startActivity(intent);
+                            finish();
+                        }
+                    });
                 }
                 break;
             case 4:
                 for (int i = 0; i < 24; i++) {
                     selectBtns[i] = (ImageView) findViewById(selectBtnId[i]);
-                    selectBtns[i].setOnClickListener(this);
+                    final int finalI = i + 1;
+                    selectBtns[i].setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View v) {
+                            //make
+                        }
+                    });
                 }
                 break;
             case 5:
                 for (int i = 0; i < 9; i++) {
                     selectBtns[i] = (ImageView) findViewById(selectBtnId[i]);
-                    selectBtns[i].setOnClickListener(this);
+                    final int finalI = i + 1;
+                    selectBtns[i].setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View v) {
+                            Intent intent = new Intent(Select.this, Content.class);
+                            intent.putExtra("FLAG1", 4);
+                            intent.putExtra("FLAG2", 1);
+                            intent.putExtra("FLAG3", finalI);
+                            startActivity(intent);
+                            finish();
+                        }
+                    });
                 }
                 break;
         }
@@ -186,11 +223,70 @@ public class Select extends Activity implements OnClickListener {
     public void onClick(View v) {
         // TODO Auto-generated method stub
 
-        switch (v.getId()) {
-            case R.id.menu_btn1:
-                Toast.makeText(getApplicationContext(), "1", Toast.LENGTH_SHORT).show();
-                break;
-//            case R.id.imageButton17:
+
+        if (flag1 == 2) {
+            switch (v.getId()) {
+                case R.id.menu_btn1:
+                    intent = new Intent(this, Select.class);
+                    intent.putExtra("FLAG1", 2);
+                    intent.putExtra("FLAG2", 1);
+                    startActivity(intent);
+                    finish();
+                    break;
+                case R.id.menu_btn2:
+                    intent = new Intent(this, Select.class);
+                    intent.putExtra("FLAG1", 2);
+                    intent.putExtra("FLAG2", 2);
+                    startActivity(intent);
+                    finish();
+                    break;
+                case R.id.menu_btn3:
+
+                    finish();
+                    break;
+                case R.id.menu_btn4:
+                    intent = new Intent(this, Select.class);
+                    intent.putExtra("FLAG1", 2);
+                    intent.putExtra("FLAG2", 3);
+                    startActivity(intent);
+                    finish();
+                    break;
+
+            }
+        }
+
+        if (flag1 == 3) {
+            switch (v.getId()) {
+
+                case R.id.menu_btn3:
+
+                    finish();
+                    break;
+
+
+            }
+        }
+
+        if (flag1 == 4) {
+            switch (v.getId()) {
+                case R.id.menu_btn1:
+                    intent = new Intent(this, Select.class);
+                    intent.putExtra("FLAG1", 4);
+                    intent.putExtra("FLAG2", 5);
+                    startActivity(intent);
+                    finish();
+                    break;
+
+                case R.id.menu_btn3:
+
+                    finish();
+                    break;
+
+
+            }
+        }
+
+        //            case R.id.imageButton17:
 //                mId.add(17);
 //                break;
 //            case R.id.imageButton18:
@@ -203,7 +299,6 @@ public class Select extends Activity implements OnClickListener {
 //            case R.id.btn_movie:
 //                startActivity(new Intent(this, M2.class));
 //                break;
-        }
 //        tempText = "";
 //        for (int i = 0; i < mId.size(); i++) {
 //            if (i == 0)
